@@ -180,7 +180,7 @@
 #### MealServlet не работает (почему?), чиним в _Optional п.5_
 - 2: Разделить реализации Repository по профилям Spring: `jdbc`, `jpa`, `datajpa` (общее в профилях можно объединять, например, `<beans profile="datajpa,jpa">`).
   - 2.1: Профили выбора DB (`postgres/hsqldb`) и реализации репозитория (`jdbc/datajpa/jpa`) независимы друг от друга, и при запуске приложения (тестов) нужно задать тот, и другой.
-  - 2.2: Для интеграции с IDEA не забудьте выставить в `spring-db.xml` справа вверху в `Change Profiles...` профили, например, `datajpa, postgres`.
+  - 2.2: Удобно для интеграции с IDEA выставить в `spring-db.xml` справа вверху в `Change Profiles...` профили, например, `datajpa, postgres`. **Это влияет ТОЛЬКО на отображение в IDEA и НИКАК на работу приложения и тестов**
   - 2.3: Общие части для всех в `spring-db.xml` можно оставить как есть без профилей вверху файла **(до первого `<beans profile=` !!!)**.
 - 3: Сделать тесты всех реализаций (`jdbc, jpa, datajpa`) через наследование (без дублирования).
   -  3.1 **сделать общий базовый класс для `MealServiceTest` и `UserServiceTest`**.
@@ -208,7 +208,7 @@
 - 3: В `MealServlet/SpringMain` в момент `setActiveProfiles` контекст спринга еще не должен быть инициализирован, иначе выставление профиля уже ни на что не повлияет.
 Уметь пользоваться гугл для разработчика, это умение №1. Если застряли- попробуйте например слова: `spring context set profile`
 - 4: Если у метода нет реализации, то стандартно бросается `UnsupportedOperationException`. Для уменьшения количества кода при реализации _Optional_ (п. 7, только `DataJpa`) попробуйте сделать `default` метод в интерфейсе.
-- 5: В Data-Jpa метод для ссылки на entity (аналог `em.getReference`) - `T getById(ID id)`  
+- 5: В Data-Jpa метод для ссылки на entity (аналог `em.getReference`) - `T getReferenceById(ID id)`  
 - 6: Проверьте, что в `DataJpaMealRepository` все обращения к DB для одной операции выполняются в **одной транзакции**.  
 (`<logger name="org.springframework.orm.jpa" level="debug"/>` для логирования информации по транзакциям)
 - 7: Для 7.1 `достать по id пользователя вместе с его едой` я в `User` добавил `List<Meal> meals`. Учесть, что у юзера может отсутствовать еда. [Ordering a join fetched collection in JPA using JPQL/HQL](http://stackoverflow.com/questions/5903774/ordering-a-join-fetched-collection-in-jpa-using-jpql-hql)
