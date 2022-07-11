@@ -228,7 +228,7 @@ Hibernate валидации, то можно найти, где обрабат�
 Cамое простое - поставить брекпойнт в конструкторах `ConstraintViolationException` или в `ValidationException` и
 запустить тест `createWithException` в дебаге.
 
-#### Apply [6_08_add_test_validation.patch](https://drive.google.com/file/d/1DuM1i2WehewEQn6Bi5jOC88FQR6tYqWU)
+#### Apply 6_08_add_test_validation.patch
 
 **Тесты валидации для Jdbc не работают, нужно будет починить в HW6 (в реализация Jdbc валидация отсутствует)**
 
