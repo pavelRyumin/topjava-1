@@ -807,6 +807,9 @@ Spring также автоматически может изменять лок�
 -  <a href="http://learningviacode.blogspot.ru/2012/07/reloadable-messagesources.html">Reloadable MessageSources</a>
 -  <a href="http://nginx.com/resources/admin-guide/serving-static-content/">nginx: Serving Static Content</a>
 
+#### Apply 7_0_fix.patch
+Небольшие правки
+
 ## ![question](https://cloud.githubusercontent.com/assets/13649199/13672858/9cd58692-e6e7-11e5-905d-c295d2a456f1.png) Ваши вопросы
 >  Кэш hibernate надстраивается над ehcache или живет самостоятельно?
 
