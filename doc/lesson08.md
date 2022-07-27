@@ -4,11 +4,11 @@
 
 - **Браузер кэширует javascript и css. Если изменения не работают, обновите приложение в браузере (в хроме `Ctrl+F5`)**
 - **При удалении файлов не забывайте делать clean: `mvn clean`**
-- 
+ 
 ### ![correction](https://cloud.githubusercontent.com/assets/13649199/13672935/ef09ec1e-e6e7-11e5-9f79-d1641c05cbe6.png) Правки в проекте
 
 #### Apply 8_0_fix.patch
-- Время еды приходит с UI с точностью до минут
+Время еды приходит с UI с точностью до минут
 
 ## ![hw](https://cloud.githubusercontent.com/assets/13649199/13672719/09593080-e6e7-11e5-81d1-5cb629c438ca.png) Разбор домашнего задания HW7
 
